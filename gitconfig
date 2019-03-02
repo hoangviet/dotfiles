@@ -27,3 +27,6 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[user]
+	name = Viet Nguyen
+	email = viet.nguyen@tiki.vn

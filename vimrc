@@ -68,7 +68,7 @@ set shiftround
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -158,6 +158,31 @@ set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" Vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimfiler_ignore_pattern = '^\%(\.git\|\.idea\|\.DS_Store\|.*\.pyc\)$'
+call vimfiler#custom#profile('default', 'context', {
+        \ 'safe' : 0,
+        \ 'auto_expand' : 1,
+        \ 'parent' : 0
+        \ })
+
+function! s:vimfiler_settings()
+    nunmap <buffer> <C-l>
+    nunmap <buffer> <C-j>
+    nnoremap <buffer> <C-r> <Plug>(vimfiler_redraw_screen)
+    nnoremap <silent><buffer><expr> v
+      \ vimfiler#do_switch_action('vsplit')
+    nnoremap <silent><buffer><expr> s
+      \ vimfiler#do_switch_action('split')
+endfunction
+
+map <c-o> :VimFilerExplorer<CR>
+
+set clipboard=unnamed
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

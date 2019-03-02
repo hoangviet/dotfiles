@@ -46,3 +46,16 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lap00583/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lap00583/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lap00583/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lap00583/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
