@@ -39,7 +39,11 @@ Plug 'vim-scripts/tComment'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
 Plug 'rking/ag.vim'
-
+Plug 'mxw/vim-jsx'
+Plug 'milch/vim-fastlane'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier'
 
 if g:has_async
   Plug 'w0rp/ale'

@@ -157,7 +157,7 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 set complete+=kspell
 
 " Always use vertical diffs
-set diffopt+=vertical
+" set diffopt+=vertical
 
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
@@ -188,3 +188,8 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+noremap <silent> <C-S-left> :vertical resize +5<CR>
+noremap <silent> <C-S-right> :vertical resize -5<CR>
+
+packloadall
