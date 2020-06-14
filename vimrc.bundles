@@ -44,6 +44,7 @@ Plug 'milch/vim-fastlane'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'prettier/vim-prettier'
+Plug 'nvie/vim-flake8'
 
 if g:has_async
   Plug 'w0rp/ale'

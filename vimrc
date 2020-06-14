@@ -192,4 +192,6 @@ endif
 noremap <silent> <C-S-left> :vertical resize +5<CR>
 noremap <silent> <C-S-right> :vertical resize -5<CR>
 
+autocmd BufWritePost *.py call flake8#Flake8()
+
 packloadall
